@@ -1,0 +1,289 @@
+@charset "utf-8";
+
+
+
+
+  
+
+body{
+
+  margin: 0 auto;  
+  max-width: 1360px; 
+  height: 100%;
+ 
+  }
+  
+  
+  header{position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: white;
+  max-width: 1360px; 
+  margin: 0 auto;
+  height: 80px;
+  z-index: 2;
+  
+  }
+  
+  
+  .ヘッダーの位置{
+    padding: 0 40px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  
+  header img{
+    object-fit: cover;
+    width: 180px;
+    height: 20px;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* ここから下がハンバーガーメニューに関するCSS */
+    
+  /* チェックボックスを非表示にする */
+  .drawer_hidden {
+    display: none;
+  }
+  
+  /* ハンバーガーアイコンの設置スペース */
+  .drawer_open {
+    display: flex;
+    height: 20px;
+    width: 30px;
+    justify-content: center;
+    align-items:center;
+    position: relative;
+    z-index: 100;/* 重なり順を一番上にする */
+    cursor: pointer;
+    top: 2px;
+   right: 105px;
+  }
+  
+  /* ハンバーガーメニューのアイコン */
+  .drawer_open span,
+  .drawer_open span::before ,.drawer_open span::after
+   {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 35px;
+    border-radius: 3px;
+    background: #333;
+    transition: 0.5s;
+    position: absolute;
+    
+  }
+  
+  
+  
+  
+  /* 三本線の一番上の棒の位置調整 */
+  .drawer_open span:before {
+    bottom: 5px;
+    
+  }
+  
+  
+  /* 三本線の一番下の棒の位置調整 */
+  .drawer_open span:after {
+    top: 3px;
+   
+  }
+  
+  
+  .drawer_open span{
+    background: rgba(255, 255, 255, 0);
+  }
+  
+  
+  #drawer_input:checked ~ .drawer_open span {
+    background: rgba(255, 255, 255, 0);
+  }
+  
+  /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+  #drawer_input:checked ~ .drawer_open span::before{
+    bottom: 0;
+    transform: rotate(45deg);
+    background-color: white;
+  }
+  
+  #drawer_input:checked ~ .drawer_open span::after {
+    top: 0;
+    transform: rotate(-45deg);
+    background-color: white;
+  }
+    
+  /* メニューのデザイン*/
+  .nav_content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 100%; /* メニューを画面の外に飛ばす */
+    z-index: 99;
+    background: black;
+    opacity: 0.8;
+  }
+  
+  /* メニュー黒ポチを消す */
+  .nav_list {
+    list-style: none;
+   position: absolute;
+   top: 30px;
+  }
+  
+  
+  .メニュー>a{
+    color: white;
+    line-height:2;
+    display: inline-block;
+  }
+  
+  
+  
+  
+  /* アイコンがクリックされたらメニューを表示 */
+  #drawer_input:checked ~ .nav_content {
+    left: 0;/* メニューを画面に入れる */
+  }
+  
+
+
+  main{
+    max-width: 800px;
+   padding: 0 40px;
+  margin-top: 80px;
+  
+  
+}
+
+
+.商品{
+  font-size: 14px;
+}
+
+
+.div{
+  display: flex;
+}
+
+
+
+.div img{
+  object-fit: cover;
+  width: 400px;
+  height: 400px;
+  display: inline-block;
+  
+}
+
+
+
+.画像の説明{
+  margin-left: 60px;
+}
+
+
+.テキスト{
+  margin-bottom: 20px;
+  font-size: 14px;
+  margin-top: 0;
+  line-height: 1.4;
+}
+
+
+.値段>p{
+  font-size: 14px;
+ margin: 0;
+ position: relative;
+}
+
+
+
+
+span{
+  position: absolute;
+  left:100px;
+}
+
+
+section{
+  margin-top: 50px;
+  text-align: center;
+}
+
+
+
+
+
+
+footer{
+  display: flex;
+  max-width: 1360px;
+  padding: 0 40px;
+  margin: 0 auto;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: baseline;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  }
+  
+  
+  .menu{
+    display: flex;
+  gap: 28px; 
+  padding-left: 0;
+  
+  
+  }
+  
+  
+  
+  
+  
+  
+  li{
+    list-style: none;
+  
+  
+  }
+  
+  a{
+    text-decoration: none;
+    color: black;
+    transition: opacity 0.5s;
+    opacity: 1;
+  font-size: 13px;
+  
+  }
+  
+  
+  
+  a:hover{
+    opacity: 0.5;
+  }
+  
+  
+  .copyright{
+    font-size: 10px;
+  
+  }
